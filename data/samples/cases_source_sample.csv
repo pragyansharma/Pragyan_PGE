@@ -1,0 +1,32 @@
+record_id,record_type,review_status,created_date,support_type,encroachment_type,structure_number,circuit,latitude,longitude,parcel_number,is_deleted
+CASE-100000,Land Rights Support,On Hold,2024-03-13T10:51:00.000-07:00,Encroachment Management,Building,,,38.144873,-121.796177,063-696-017,false
+CASE-100001,Land Rights Support,Cancelled,2024-04-02T10:15:00.000-07:00,Encroachment Management,Deck,1018,LINE A-B,38.139711,-122.46393,067-160-082,false
+CASE-100002,Land Rights Support,Not Started,2024-04-21T10:50:00.000-07:00,Encroachment Management,Building,1018,LINE A-B,38.099179,-122.268377,075-979-027,true
+CASE-100003,Land Rights Support,On Hold,2024-07-05T10:44:00.000-07:00,Project Support,Shed,022/006,,39.120515,-121.576996,046-695-083,false
+CASE-100004,Land Rights Support,Not Needed,2024-04-12T10:16:00.000-07:00,Encroachment Management,Building; Shed,,LINE A-B,39.424222,-121.753448,079-310-073,false
+CASE-100005,Land Rights Support,Not Needed,2024-09-14T10:59:00.000-07:00,Encroachment Management,Swimming Pool,Z008/001,LINE A-B,,,059-354-033,false
+CASE-100006,Land Rights Support,Not Needed,2024-04-03T10:46:00.000-07:00,Encroachment Management,Fence,Z008/001,,39.750275,-121.505832,058-723-019,false
+CASE-100007,Hydro Support,Not Started,2024-09-14T10:20:00.000-07:00,Encroachment Management,Swimming Pool,017/009,LINE A-B,39.86654,-121.967452,082-179-081,false
+CASE-100008,Land Rights Support,Cancelled,2024-06-11T10:54:00.000-07:00,Encroachment Management,Swimming Pool,,LINE A-B,39.18874,-121.730157,069-170-021,false
+CASE-100009,Land Rights Support,On Hold,2024-08-23T10:52:00.000-07:00,Encroachment Management,Shed,010/072,,-122.135589,39.462319,076-797-067,false
+CASE-100010,Land Rights Support,On Hold,2024-12-13T10:52:00.000-07:00,Encroachment Management,Swimming Pool,010/072,LINE A-B,39.881297,-122.066804,079-219-073,false
+CASE-100011,Land Rights Support,Pending,2024-01-07T10:59:00.000-07:00,Encroachment Management,Fence,017/009,LINE A-B,39.476727,-122.003153,098-992-073,false
+CASE-100012,Land Rights Support,Not Started,2024-03-15T10:35:00.000-07:00,Encroachment Management,Building; Shed,,,38.555678,-122.394611,067-984-080,false
+CASE-100013,Land Rights Support,On Hold,2024-12-14T10:32:00.000-07:00,Encroachment Management,Deck,004/032,LINE A-B,,,,false
+CASE-100014,Land Rights Support,In Process,2024-11-08T10:10:00.000-07:00,Encroachment Management,Other,017/009,LINE A-B,38.525493,-122.59386,066-647-057,false
+CASE-100015,Land Rights Support,Cancelled,2024-10-11T10:18:00.000-07:00,Encroachment Management,Building; Shed,010/072,,38.913287,-121.293531,095-796-081,false
+CASE-100016,Land Rights Support,Completed,2024-07-13T10:35:00.000-07:00,Encroachment Management,Shed,,LINE A-B,38.963046,121.999336,052-168-036,false
+CASE-100017,Land Rights Support,Completed,2024-03-04T10:31:00.000-07:00,Encroachment Management,Building,A002/056,LINE A-B,38.000467,-122.373103,046-472-088,false
+CASE-100018,Land Rights Support,Not Started,2024-02-28T10:23:00.000-07:00,Encroachment Management,Deck,017/009,,39.268819,-121.166798,078-472-070,false
+CASE-100019,Land Rights Support,Not Started,2019-11-03T09:12:00.000-08:00,Encroachment Management,Shed,Z008/001,LINE A-B,39.986205,-121.901016,070-419-020,false
+CASE-100020,Land Rights Support,In Process,2024-02-24T10:31:00.000-07:00,Encroachment Management,Fence,,LINE A-B,38.957244,-121.561915,073-123-036,false
+CASE-100021,Land Rights Support,Cancelled,2024-06-05T10:54:00.000-07:00,Encroachment Management,Building; Shed,010/072,,39.516286,-122.152865,"081-984-021, 044-210-022",false
+CASE-100022,Land Rights Support,Not Needed,2024-05-17T10:33:00.000-07:00,,Stored Materials,041/118,LINE A-B,39.543876,-121.801111,089-614-052,false
+CASE-100023,Land Rights Support,Not Needed,2024-04-20T10:58:00.000-07:00,Encroachment Management,Debris; Stored Materials,004/032,LINE A-B,39.636666,-121.49019,054-304-076,false
+CASE-100024,Land Rights Support,Completed,2024-06-24T10:11:00.000-07:00,Encroachment Management,Building,,,39.580228,-121.89164,052-809-087,false
+CASE-100025,Land Rights Support,On Hold,2024-08-26T10:56:00.000-07:00,Encroachment Management,,041/118,LINE A-B,39.910001,-122.053046,054-204-039,false
+CASE-100026,Land Rights Support,Completed,2024-04-11T10:23:00.000-07:00,Encroachment Management,Other,010/072,LINE A-B,,,091-758-020,false
+CASE-100027,Land Rights Support,Not Needed,2024-02-13T10:55:00.000-07:00,Encroachment Management,Debris; Stored Materials,Z008/001,,39.778022,-121.949112,080-440-021,false
+CASE-100028,Land Rights Support,Not Needed,2024-07-15T10:35:00.000-07:00,Encroachment Management,Shed,,LINE A-B,39.449597,-122.344995,048-128-029,true
+CASE-100029,Land Rights Support,Cancelled,2024-08-26T10:51:00.000-07:00,Encroachment Management,Stored Materials,Z008/001,LINE A-B,39.314537,-122.074389,075-661-026,false
+CASE-100005,Land Rights Support,Completed,2024-09-14T10:59:00.000-07:00,Encroachment Management,Swimming Pool,Z008/001,LINE A-B,,,059-354-033,false

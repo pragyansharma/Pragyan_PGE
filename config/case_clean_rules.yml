@@ -1,0 +1,32 @@
+# Contract for the case-management clean layer.
+# The same predicates are in case_clean.sql. The test checks the two still match.
+
+population:
+  # Applied as a flag. Rows outside the population stay in case_clean.
+  record_type: Land Rights Support
+  support_type: Encroachment Management
+  # Civil date on the source timestamp. Compared before any conversion to UTC.
+  created_after: '2019-12-31'
+  # is_deleted is an attribute of the row. It is not a population predicate.
+
+status_buckets:
+  active: [Not Started, In Process, On Hold]
+  closed: [Completed, Cancelled, Not Needed]
+  other_label: other
+
+identifiers:
+  # Stored as text. 1018 and 010/072 are structure numbers.
+  record_id_pattern: '^CASE-[0-9]{6}$'
+
+coordinates:
+  latitude: [-90, 90]
+  longitude: [-180, 180]
+  # Detects a missing minus sign on a California longitude. The value is not rewritten.
+  operating_latitude: [32, 42.5]
+  operating_longitude_magnitude: [114, 125]
+
+# Removed from case_clean_trusted only. The row stays, and the build does not fail.
+blocking_rules:
+  - record_id_unusable
+  - created_date_unparseable
+  - is_deleted_unparseable

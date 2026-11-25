@@ -1,0 +1,26 @@
+{
+  "status": "awaiting_report_keys",
+  "summary": {
+    "status": "awaiting_report_keys",
+    "report_count_claimed": 1373,
+    "sync_count_claimed": 1498,
+    "gap_claimed": 125,
+    "unexplained_count": null,
+    "message": "Both counts are published. The gap is not classified until the report owner sends the record ids behind the report count."
+  },
+  "alerts": [
+    {
+      "channel": "page",
+      "code": "recon_blocked",
+      "recipients": "data_engineering_oncall",
+      "detail": "{'status': 'awaiting_report_keys', 'report_count_claimed': 1373, 'sync_count_claimed': 1498, 'gap_claimed': 125}"
+    },
+    {
+      "channel": "email",
+      "code": "awaiting_report_keys",
+      "recipients": "data_engineering_oncall,report_owner,case_system_owner",
+      "detail": "{'status': 'awaiting_report_keys', 'report_count_claimed': 1373, 'sync_count_claimed': 1498, 'gap_claimed': 125}"
+    }
+  ],
+  "classifications": []
+}

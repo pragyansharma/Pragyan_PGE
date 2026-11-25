@@ -1,0 +1,24 @@
+# Schedule, freshness, and alert routing for the scoring job.
+# The scoring function is not configured here.
+
+schedule:
+  cron: "0 5 * * 1"
+  timezone: America/Los_Angeles
+  sla_local: "07:00"
+  upstream_max_age_hours: 12
+
+model_version_prefix: ds-notebook-unversioned
+
+alerts:
+  # The first failure pages data engineering.
+  # Risk operations is emailed when the SLA is missed, or when two runs fail in a row.
+  page:
+    - role: data_engineering_oncall
+      when: [run_failed, upstream_stale, sla_at_risk]
+    - role: data_science_methodology_owner
+      when: [scoring_exception]
+  email:
+    - role: risk_operations
+      when: [sla_missed, two_consecutive_failures]
+    - role: data_science_methodology_owner
+      when: [run_failed]

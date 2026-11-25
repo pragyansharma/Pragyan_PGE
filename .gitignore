@@ -1,0 +1,6 @@
+__pycache__/
+.pytest_cache/
+*.pyc
+.venv/
+_probe_duckdb.py
+_pdf_mid.txt

@@ -1,0 +1,87 @@
+{
+  "status": "report_only_present",
+  "summary": {
+    "keys_compared": 7,
+    "matched": 1,
+    "attribute_conflict": 1,
+    "sync_only_explained": 3,
+    "sync_only_unexplained": 1,
+    "report_only": 1,
+    "status": "report_only_present",
+    "report_count_claimed": 1373,
+    "sync_count_claimed": 1498,
+    "prior_unexplained": 0,
+    "unexplained_jump": true
+  },
+  "alerts": [
+    {
+      "channel": "page",
+      "code": "report_only_count_gt_0",
+      "recipients": "data_engineering_oncall",
+      "detail": "{'status': 'report_only_present', 'matched': 1, 'attribute_conflict': 1, 'sync_only_explained': 3, 'sync_only_unexplained': 1, 'report_only': 1, 'report_count_claimed': 1373, 'sync_count_claimed': 1498}"
+    },
+    {
+      "channel": "page",
+      "code": "unexplained_jump_vs_prior_day",
+      "recipients": "data_engineering_oncall",
+      "detail": "{'status': 'report_only_present', 'matched': 1, 'attribute_conflict': 1, 'sync_only_explained': 3, 'sync_only_unexplained': 1, 'report_only': 1, 'report_count_claimed': 1373, 'sync_count_claimed': 1498}"
+    },
+    {
+      "channel": "email",
+      "code": "unexplained_count_gt_0",
+      "recipients": "data_engineering_oncall,report_owner,case_system_owner",
+      "detail": "{'status': 'report_only_present', 'matched': 1, 'attribute_conflict': 1, 'sync_only_explained': 3, 'sync_only_unexplained': 1, 'report_only': 1, 'report_count_claimed': 1373, 'sync_count_claimed': 1498}"
+    }
+  ],
+  "classifications": [
+    {
+      "record_id": "S-CONFLICT",
+      "classification": "attribute_conflict",
+      "explained_by": "attributes_differ",
+      "in_sync": true,
+      "in_report": true
+    },
+    {
+      "record_id": "S-DELETED",
+      "classification": "sync_only_explained",
+      "explained_by": "not_deleted",
+      "in_sync": true,
+      "in_report": false
+    },
+    {
+      "record_id": "S-MATCH",
+      "classification": "matched",
+      "explained_by": "",
+      "in_sync": true,
+      "in_report": true
+    },
+    {
+      "record_id": "S-OLD",
+      "classification": "sync_only_explained",
+      "explained_by": "created_on_or_after",
+      "in_sync": true,
+      "in_report": false
+    },
+    {
+      "record_id": "S-REPORT-ONLY",
+      "classification": "report_only",
+      "explained_by": "not_in_sync",
+      "in_sync": false,
+      "in_report": true
+    },
+    {
+      "record_id": "S-TYPE",
+      "classification": "sync_only_explained",
+      "explained_by": "record_type",
+      "in_sync": true,
+      "in_report": false
+    },
+    {
+      "record_id": "S-UNEXPLAINED",
+      "classification": "sync_only_unexplained",
+      "explained_by": "",
+      "in_sync": true,
+      "in_report": false
+    }
+  ]
+}

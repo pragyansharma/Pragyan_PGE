@@ -1,0 +1,10 @@
+rule_id,severity,count
+distance_recomputes,flag,1
+distance_unit_ftus,reject_file,1
+duplicate_measure,flag,2
+file_name_contract,reject_file,1
+label_separator,flag,1
+label_suffix,flag,1
+measurement_set_incomplete,flag,1
+notes_shape_on_s,flag,1
+tag_shape_on_ht,flag,3

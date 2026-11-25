@@ -1,0 +1,12 @@
+{
+  "status": "succeeded",
+  "started_at_utc": "2026-11-25T04:32:12.278872+00:00",
+  "features_path": "C:\\Users\\pragy\\Downloads\\Pragyan_PGE\\Pragyan_PGE\\data\\samples\\model\\features.csv",
+  "params_path": "C:\\Users\\pragy\\Downloads\\Pragyan_PGE\\Pragyan_PGE\\src\\risk_platform\\exercise5_model\\params.yml",
+  "freshness_as_of_utc": "2026-11-20T15:00:00+00:00",
+  "model_version": "ds-notebook-unversioned+4cc93d4d431e",
+  "row_count": 3,
+  "output_path": "C:\\Users\\pragy\\Downloads\\Pragyan_PGE\\Pragyan_PGE\\outputs\\exercise5\\risk_score.csv",
+  "output_sha256": "df9c06de5d934203ab793e52c48a24b96236a5cfc072abf73f5925dcb8fa365e",
+  "finished_at_utc": "2026-11-25T04:32:12.328846+00:00"
+}

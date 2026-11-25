@@ -1,0 +1,10 @@
+{
+  "input_rows": 31,
+  "clean_rows": 31,
+  "assertion_failures": 0,
+  "in_population": 27,
+  "out_of_population": 4,
+  "duplicate_rows": 2,
+  "unresolved_conflicts": 2,
+  "structure_number_type": "VARCHAR"
+}

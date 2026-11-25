@@ -1,0 +1,31 @@
+# Distances are US survey feet in the structure's own CRS.
+# 200 ft is the placeholder for a corridor hit. The nearest structure is stored either way.
+
+corridor_radius_ftus: 200
+spatial_rule_version: spatial-rules-1.0.0
+case_snapshot_id: case-locations-appendix
+structure_snapshot_id: structures-appendix
+
+# Official EPSG areas of use. The boxes overlap, so latitude cannot assign the zone.
+# Zone membership in production is the county polygon.
+zones:
+  - name: CA Zone 2 (EPSG:6418)
+    epsg: 6418
+    west: -124.06
+    south: 38.02
+    east: -119.54
+    north: 40.16
+  - name: CA Zone 3 (EPSG:6420)
+    epsg: 6420
+    west: -123.02
+    south: 36.73
+    east: -117.83
+    north: 38.71
+
+# The default PROJ step from NAD83(2011) to WGS84 is a null shift, on the order of a meter.
+datum_note: >-
+  Distances use the structure CRS (US survey foot) after transforming the
+  case point from EPSG:4326 with the PROJ pipeline recorded on the row.
+  NAD83(2011) and WGS84 are treated as coincident by that default pipeline,
+  which can be off by about a meter. Clearance numbers are provisional
+  until the GIS team supplies the official transformation and zone polygons.

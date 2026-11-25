@@ -1,0 +1,42 @@
+# A row is explained only by a predicate that can be executed against the sync.
+
+scenario:
+  report_count: 1373
+  sync_count: 1498
+  known_filter_count: 3
+  unresolved_filter_count: 2
+
+# Working set until the report owner provides the five filters in the report definition.
+known_predicates:
+  - id: not_deleted
+    column: is_deleted
+    equals: 'false'
+    expected: "Expected is_deleted to be false, which is one of the predicates the report owner confirmed we can reproduce."
+  - id: created_on_or_after
+    column: created_civil_date
+    on_or_after: '2020-01-01'
+    expected: "Expected created_civil_date on or after 2020-01-01, which is one of the predicates the report owner confirmed we can reproduce."
+  - id: record_type
+    column: record_type
+    equals: Land Rights Support
+    expected: "Expected record_type to be Land Rights Support, which is one of the predicates the report owner confirmed we can reproduce."
+
+unresolved_predicates:
+  - id: unresolved_predicate_1
+    expected: "The report uses a fifth-of-five filter on a field that is not in the sync. The record is not classified as excluded by that filter until the field and the predicate are both in hand."
+  - id: unresolved_predicate_2
+    expected: "The report uses a second filter on a field that is not in the sync. Same rule: unexplained until it can be reproduced. One candidate to ask about is row-level security in the report tool."
+
+alerts:
+  # Page when rows are missing from the sync, or when the report keys are not available.
+  # Email when the unexplained residual is stable.
+  page_when:
+    - recon_blocked
+    - report_only_count_gt_0
+    - unexplained_jump_vs_prior_day
+  email_when:
+    - unexplained_count_gt_0
+    - awaiting_report_keys
+  recipients:
+    page: [data_engineering_oncall]
+    email: [data_engineering_oncall, report_owner, case_system_owner]

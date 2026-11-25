@@ -1,0 +1,6 @@
+duckdb>=1.1
+pandas>=2.2
+pyyaml>=6
+pyproj>=3.6
+python-pptx>=1.0
+pytest>=8

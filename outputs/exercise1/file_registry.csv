@@ -1,0 +1,5 @@
+ingest_id,file_name,file_hash,arrived_at,engineer,measurement_date,zone,status,supersedes_ingest_id,file_rules,note
+ing-0001,AB_20260301_zone2_meas.csv,a5d19df4f38d6426432012bbc5ef38cfaaa9c6b3af6c5600ad736b2461a22f0a,2026-03-01T18:00:00+00:00,AB,2026-03-01,2,active,,,
+ing-0002,AB_20260302_zone2_meas.csv,4a71c75cf34f8033e551c25832761684f172de92d7cd747cef60e0b223c0ef6e,2026-03-02T18:00:00+00:00,AB,2026-03-02,2,active,,measurement_set_incomplete,
+ing-0003,CD_zone2_export_final.csv,ab8524d08b1f223efbdf03ff12f31e56f6cfb2be4b3bf7641e276f04c2a5b5da,2026-03-02T19:00:00+00:00,CD,,,rejected,,"file_name_contract,distance_unit_ftus","The file was not loaded. A name that does not match the contract cannot replace another file, and its rows cannot become current."
+ing-0004,AB_20260301_zone2_meas.csv,a5d19df4f38d6426432012bbc5ef38cfaaa9c6b3af6c5600ad736b2461a22f0a,2026-03-01T20:00:00+00:00,AB,2026-03-01,2,duplicate_noop,,,"Same engineer, date, zone, and file hash as the active file. No rows were added."

@@ -1,0 +1,7 @@
+record_id,is_deleted,created_civil_date,record_type,review_status
+S-MATCH,false,2024-04-01,Land Rights Support,On Hold
+S-DELETED,true,2024-04-01,Land Rights Support,Cancelled
+S-OLD,false,2019-06-01,Land Rights Support,Completed
+S-TYPE,false,2024-04-01,Hydro Support,Not Started
+S-UNEXPLAINED,false,2024-05-01,Land Rights Support,In Process
+S-CONFLICT,false,2024-05-02,Land Rights Support,On Hold

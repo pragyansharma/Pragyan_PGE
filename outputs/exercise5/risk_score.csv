@@ -1,0 +1,4 @@
+model_version,feature_as_of,scored_at_utc,entity_id,risk_score,risk_category
+ds-notebook-unversioned+4cc93d4d431e,2026-11-20T12:00:00Z,2026-11-25T04:32:12.278872+00:00,E-1,0.7666666666666666,high
+ds-notebook-unversioned+4cc93d4d431e,2026-11-20T12:00:00Z,2026-11-25T04:32:12.278872+00:00,E-2,0.13999999999999999,low
+ds-notebook-unversioned+4cc93d4d431e,2026-11-20T12:00:00Z,2026-11-25T04:32:12.278872+00:00,E-3,0.9363636363636363,high

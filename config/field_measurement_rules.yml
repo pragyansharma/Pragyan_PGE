@@ -1,0 +1,125 @@
+# Field-measurement contract. Severity and the expected sentence are set here.
+# The distance recomputation stays in the loader.
+
+file_name:
+  # The stem is the contract. .csv is accepted and is not part of the name.
+  pattern: '^[A-Z]{2,4}_[0-9]{8}_zone[0-9]+_meas$'
+  example: AB_20260301_zone2_meas
+  allowed_extensions: ['.csv']
+
+roster:
+  # An engineer who is not on the roster is flagged. The file is still loaded.
+  initials: [AB, CD]
+
+distance:
+  required_header: 'Distance (ftUS)'
+  # 0.02 ft covers rounding to 0.001 ft. A unit error or an H versus 3D swap is about a foot.
+  tolerance_ftus: 0.02
+  # HT is a vertical segment. Horizontal drift above this means the segment is not vertical.
+  max_horizontal_for_height_ftus: 0.05
+
+required_columns:
+  - Name
+  - Easting1
+  - Northing1
+  - Height1
+  - Easting2
+  - Northing2
+  - Height2
+
+measure_codes: [H, V, 3D, S, HT]
+required_set: [H, V, 3D, S, HT]
+
+notes:
+  # circuit | structure number | kV | line number. Whitespace around the bars is accepted.
+  pattern: '^\s*[^|]+?\s*\|\s*[^|]+?\s*\|\s*[0-9]+\s*kV\s*\|\s*[^|]+?\s*$'
+
+tags:
+  object_types:
+    - Building
+    - Shed
+    - Swimming Pool
+    - Fence
+    - Deck
+    - Debris
+    - Stored Materials
+    - Other
+  states: [present, changed]
+
+rules:
+  file_name_contract:
+    scope: file
+    severity: reject_file
+    expected: "Expected a file name of the form initials_yyyymmdd_zoneN_meas (example AB_20260301_zone2_meas) so the file can be attributed to an engineer, a measurement date, and a State Plane zone."
+  file_readable:
+    scope: file
+    severity: reject_file
+    expected: "Expected a readable CSV with a header row."
+  file_not_empty:
+    scope: file
+    severity: reject_file
+    expected: "Expected at least one measurement row."
+  required_columns:
+    scope: file
+    severity: reject_file
+    expected: "Expected columns Name, Easting1, Northing1, Height1, Easting2, Northing2, Height2, and a distance column."
+  distance_unit_ftus:
+    scope: file
+    severity: reject_file
+    expected: "Expected the distance column to be named 'Distance (ftUS)'. Values in any other unit are not converted. Resubmit the export in US survey feet."
+  engineer_on_roster:
+    scope: file
+    severity: flag
+    expected: "Expected the engineer initials in the file name to be on the field roster. The file is still loaded. Ask the field supervisor to add the initials or correct the file name."
+  label_unparseable:
+    scope: row
+    severity: reject_row
+    expected: "Expected a label starting with a case id of the form CASE-000000. This row has no case id, so it cannot be attached to a case."
+  label_separator:
+    scope: row
+    severity: flag
+    expected: "Expected an underscore before the measure code (H, V, 3D, S, or HT). Example: CASE-000000_H."
+  label_suffix:
+    scope: row
+    severity: flag
+    expected: "Expected extra objects as _o1, _o2 and extra circuits as _c1, _c2, placed before the measure code. A suffix such as _01 after the measure code is not in the contract."
+  required_endpoint:
+    scope: row
+    severity: reject_row
+    expected: "Expected both endpoints (easting, northing, height) and a numeric distance, so the distance can be recomputed."
+  distance_recomputes:
+    scope: row
+    severity: flag
+    expected: "Expected the reported distance to match the endpoints in US survey feet. H and S are horizontal (easting and northing only). V and HT are the absolute height difference. 3D is the straight-line distance. The reported value was not replaced."
+  height_axis_for_ht:
+    scope: row
+    severity: flag
+    expected: "Expected an HT measurement to be vertical: the same easting and northing at both ends, and the distance equal to the height difference."
+  notes_shape_on_s:
+    scope: row
+    severity: flag
+    expected: "Expected notes on the S measurement only, as circuit | structure number | kV | line number, separated by vertical bars. Example: LINE A-B | 004/032 | 115 kV | ETL.1422."
+  notes_not_only_on_s:
+    scope: row
+    severity: flag
+    expected: "Expected notes only on the S measurement. This row is not an S measurement and notes are not empty."
+  tag_shape_on_ht:
+    scope: row
+    severity: flag
+    expected: "Expected the HT tag to contain one object type from the controlled list and one state (present or changed), separated by a semicolon. Example: Building; present."
+  tag_not_only_on_ht:
+    scope: row
+    severity: flag
+    expected: "Expected tags only on the HT measurement."
+  duplicate_label:
+    scope: row
+    severity: flag
+    expected: "Expected each label to occur once in the file."
+  duplicate_measure:
+    scope: row
+    severity: flag
+    expected: "Expected one row per case, object, circuit, and measure code. Both rows are kept. Only one is marked current, and the selection reason is on the other row."
+  measurement_set_incomplete:
+    scope: case
+    severity: flag
+    expected: "Expected five measurements for each case: H, V, 3D, S, and HT."

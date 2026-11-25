@@ -1,0 +1,10 @@
+# Parameters the notebook already uses. Loaded from the path given to the runner.
+# Included in model_version, so a change here changes the stamp.
+
+weights:
+  proximity: 0.7
+  encroachment: 0.3
+proximity_scale_ft: 100
+category_thresholds:
+  high: 0.75
+  medium: 0.4
