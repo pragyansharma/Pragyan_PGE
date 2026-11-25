@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Enterprise risk data platform
 
 Part A is the slide deck. Part B is this write-up and the code for the five exercises. The risk method stays with data science.
@@ -35,3 +36,7 @@ Exercise 5 leaves the scoring function alone. The runner supplies the paths, che
 - The program spans five State Plane zones. The sample has Zone 2 and Zone 3. Distance is US survey feet in the structure's own CRS, and zones are never mixed. Cases without coordinates do not get an invented point.
 - 1,373 versus 1,498 is not reconciled until the report's record ids and all five filters are in hand. The two filters whose fields are missing do not get to explain the gap.
 - Clearance distances in this sample are provisional. County polygons and the GIS team's official datum transformation are still required.
+=======
+# Pragyan_PGE
+Production-ready enterprise risk data platform integrating case, GIS, field, and model data with validation, reconciliation, spatial analysis, and scheduled risk scoring.
+>>>>>>> 1f311c1d39efd4f4545fa7d8bde132170850368d
